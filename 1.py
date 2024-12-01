@@ -10,14 +10,8 @@ for row in data:
 
 l1.sort(); l2.sort()
 
-ans1 = 0
-for x, y in zip(l1, l2):
-    ans1 += abs(x-y)
-print("Part 1:", ans1)
+print("Part 1:", sum(abs(x-y) for x, y in zip(l1, l2)))
 
 cnts = collections.Counter(l2)
-ans2 = 0
-for x in l1:
-    ans2 += x * cnts[x]
-print("Part 2:", ans2)
+print("Part 2:", sum(x * cnts[x] for x in l1))
 
