@@ -11,7 +11,7 @@ for part2 in [0, 1]:
             flag = 0
         elif data[i:].startswith("do()"):
             flag = 1
-        elif flag or not part2:
+        if flag or not part2:
             match = re.match(p, data[i:])
             if match is not None:
                 a, b = map(int, match.groups())
