@@ -9,7 +9,7 @@ print("Part 1:", sum(int(x) * int(y) for x, y in matches))
 ans = 0
 segments = data.split("do()")
 for segment in segments[1:]:
-    segment_before_dont = re.split(r"don't\(\)", segment)[0]
+    segment_before_dont = segment.split("don't()")[0]
     matches = re.findall(p, segment_before_dont)
     for x, y in matches:
         ans += int(x) * int(y)
