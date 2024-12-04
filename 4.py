@@ -20,10 +20,7 @@ ans = 0
 for i in range(1, m-1):
     for j in range(1, n-1):
         if rows[i,j] == "A":
-            d, d_ = ["A"], ["A"]
-            d_.append(rows[i+1, j+1])
-            d_.append(rows[i-1, j-1])
-            d.append(rows[i-1, j+1])
-            d.append(rows[i+1, j-1])
-            ans += "".join(sorted(d)) == "AMS" and "".join(sorted(d_)) == "AMS"
+            d_ = sorted([rows[i+1, j+1], "A", rows[i-1, j-1]])
+            d  = sorted([rows[i-1, j+1], "A", rows[i+1, j-1]])
+            ans += "".join(d) == "AMS" and "".join(d_) == "AMS"
 print("Part 2:", ans)
