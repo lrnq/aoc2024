@@ -20,7 +20,8 @@ for line in lines:
 print("Part 1:", ans)
 
 # A topological sort would work and then both parts would fit nicely and part 1
-# would be more general.
+# would be more general. I exploit the fact that there are no 2-hops in the 
+# graph implied by the ordering. 
 ordering_d = collections.defaultdict(set)
 for x, y in ordering:
     ordering_d[x].add(y)
