@@ -26,7 +26,7 @@ for x, y in ordering:
 ans = 0
 for line in bad:
     # Technically this is in "reverse" order, but since we only care
-    # about the middle argument it does not matter. 
+    # about the middle argument it does not matter and i wont bother reversing it.
     for i in range(1, len(line)):
         k = line[i]
         j = i - 1 
