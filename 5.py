@@ -19,12 +19,8 @@ for line in lines:
         ans += line[len(line)//2]
 print("Part 1:", ans)
 
-# A topological sort would work and then both parts would fit nicely and part 1
-# would be more general. I exploit the fact that the lines contains no 2-hops in the 
-# graph implied by the ordering. 
 ordering_d = collections.defaultdict(set)
-for x, y in ordering:
-    ordering_d[x].add(y)
+for x, y in ordering: ordering_d[x].add(y)
 
 ans = 0
 for line in bad:
@@ -32,7 +28,7 @@ for line in bad:
         k = line[i]
         j = i - 1 
         while j >= 0 and line[j] not in ordering_d[k]:
-            line[j + 1] = line[j]
+            line[j+1] = line[j]
             j -= 1
         line[j+1] = k
     ans += line[len(line)//2]
