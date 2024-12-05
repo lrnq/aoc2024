@@ -19,14 +19,14 @@ for line in lines:
         ans += line[len(line)//2]
 print("Part 1:", ans)
 
+# A topological sort would work and then both parts would fit nicely and part 1
+# would be more general.
 ordering_d = collections.defaultdict(set)
 for x, y in ordering:
     ordering_d[x].add(y)
 
 ans = 0
 for line in bad:
-    # Technically this is in "reverse" order, but since we only care
-    # about the middle argument it does not matter and i wont bother reversing it.
     for i in range(1, len(line)):
         k = line[i]
         j = i - 1 
