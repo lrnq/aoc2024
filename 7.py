@@ -23,7 +23,6 @@ def good(nums, ans, part2):
             return True
     return False
 
-    
 
 print("Part 1:", sum(ans for ans, nums in d.items() if good(nums, ans, False)))
 print("Part 2:", sum(ans for ans, nums in d.items() if good(nums, ans, True)))
