@@ -3,7 +3,6 @@ import itertools
 from aocd import get_data
 
 data = get_data().splitlines()
-ops = ["*", "+", "|"]
 d = collections.defaultdict(list)
 for line in data:
     ans, nums = line.split(":")
