@@ -21,20 +21,15 @@ for i in range(n):
                     dr, dc = abs(i - ii), abs(j-jj)
                     flag = 0
                     iter = 1
+                    directions = [(dr, dc),(-dr, -dc),(dr, -dc),(-dr, dc)]
                     prev_seen = seen.copy()
                     while 1:
-                        if 0 <= ii+dr*iter < n and 0 <= jj+dc*iter < m:
-                            if collinear((ii+dr*iter,jj+dc*iter), (i,j), (ii,jj)):
-                                seen.add((ii+dr*iter, jj+dc*iter))
-                        if 0 <= ii-dr*iter < n and 0 <= jj-dc*iter < m:
-                            if collinear((ii-dr*iter,jj-dc*iter), (i,j), (ii,jj)):
-                                seen.add((ii-dr*iter, jj-dc*iter))
-                        if 0 <= ii+dr*iter < n and 0 <= jj-dc*iter < m:
-                            if collinear((ii+dr*iter,jj-dc*iter), (i,j), (ii,jj)):
-                                seen.add((ii+dr*iter, jj-dc*iter))
-                        if 0 <= ii-dr*iter < n and 0 <= jj+dc*iter < m:
-                            if collinear((ii-dr*iter,jj+dc*iter), (i,j), (ii,jj)):
-                                seen.add((ii-dr*iter, jj+dc*iter))
+                        for drow, dcol in directions:
+                            new_i = ii + drow * iter
+                            new_j = jj + dcol * iter
+                            if 0 <= new_i < n and 0 <= new_j < m:
+                                if collinear((new_i, new_j), (i, j), (ii, jj)):
+                                    seen.add((new_i, new_j))
                         if len(seen) == len(prev_seen):
                             flag += 1
                             if flag > 25:
