@@ -4,6 +4,7 @@ from aocd import get_data
 
 pairs = list(more_itertools.batched(get_data().splitlines(), 2))
 
+# Not great, but the input is small.
 explicit = []
 for id, p in enumerate(pairs):
     p = tuple(map(int, p))
