@@ -9,7 +9,7 @@ def f(c):
     for k, v in c.items():
        if k == "0":
            out["1"] += v
-       elif len(k) % 2 == 0:
+       elif not len(k) & 1:
             out[str(int(k[:len(k)//2]))] += v 
             out[str(int(k[len(k)//2:]))] += v 
        else:
