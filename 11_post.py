@@ -17,11 +17,7 @@ def f(c):
     return out
 
 cntr = collections.Counter(data)
-for _ in range(25):
+for i in range(75):
     cntr = f(cntr)
-print(sum(cntr[k] for k in cntr))
-
-cntr = collections.Counter(data)
-for _ in range(75):
-    cntr = f(cntr)
-print(sum(cntr[k] for k in cntr))
+    if i in [24, 74]:
+        print(sum(cntr[k] for k in cntr))
