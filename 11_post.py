@@ -5,7 +5,7 @@ from aocd import get_data
 data = get_data().split()
 
 def f(c):
-    out = collections.defaultdict(int)
+    out = collections.Counter()
     for k, v in c.items():
        if k == "0":
            out["1"] += v
