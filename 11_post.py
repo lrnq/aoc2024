@@ -10,8 +10,8 @@ def f(c):
        if k == "0":
            out["1"] += v
        elif not len(k) & 1:
-            out[str(int(k[:len(k)//2]))] += v 
-            out[str(int(k[len(k)//2:]))] += v 
+            out[str(int(k[:(h:=len(k)//2)]))] += v 
+            out[str(int(k[h:]))] += v 
        else:
            out[str(int(k) * 2024)] += v
     return out
