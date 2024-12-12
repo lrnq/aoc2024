@@ -20,12 +20,11 @@ def perimeter_contribution(group, r, c):
     return contribution
 
 def corner(r, c, group):
-    # Convex corner
+    # convex case
     if (pc := perimeter_contribution(group, r, c)) == 2:
         return 1
+    # concave case
     elif pc == 0:
-        # If there is a single corner of data[r][c] that is not of the 
-        # same group we have a concave corner.
         empty_corners = 0
         for dr, dc in ((1, 1), (-1, 1), (-1, -1), (1, -1)):
             empty_corners += data[r+dr][c+dc] != group
