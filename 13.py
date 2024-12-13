@@ -3,9 +3,11 @@ from sympy import solve
 from sympy.abc import A, B
 
 # Initially i just did some heuristics based + DP solution for part 1, 
-# but it was too slow for part 2 even when i tried to optimize with GCD for 
+# but it was too slow for part 2 even when i tried to optimize with GCD of 
 # the individual largest proper divisors - the input looked like it was purposefully
-# designed this way. Evenutally i realized it is just some linear algebra, and i wanted to use sympy for something.
+# designed this way. Evenutally i realized it is just some linear algebra.
+# I wanted to use sympy for something though before i suspect it will be needed 
+# for later days.
 data = get_data().split("\n\n")
 for part2 in [0, 1]:
     agg = 0
